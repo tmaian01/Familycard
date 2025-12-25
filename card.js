@@ -1,7 +1,7 @@
 const pages=[
-  {src:'assets/images/page1.png',showControls:false},
-  {src:'assets/images/page2.png',showControls:false},
-  {src:'assets/images/page3.png',showControls:true},
+  {src:'page1.png',showControls:false},
+  {src:'page2.png',showControls:false},
+  {src:'page3.png',showControls:true},
 ];
 
 const pageImg=document.getElementById('pageImg');
@@ -73,8 +73,8 @@ function closeZoom(){
   zoomImg.src='';
 }
 
-zoomLeftBtn.addEventListener('click',(e)=>{e.stopPropagation();openZoom('assets/images/page3-left.png');});
-zoomRightBtn.addEventListener('click',(e)=>{e.stopPropagation();openZoom('assets/images/page3-right.png');});
+zoomLeftBtn.addEventListener('click',(e)=>{e.stopPropagation();openZoom('page3-left.png');});
+zoomRightBtn.addEventListener('click',(e)=>{e.stopPropagation();openZoom('page3-right.png');});
 closeModal.addEventListener('click',closeZoom);
 modal.addEventListener('click',(e)=>{if(e.target===modal) closeZoom();});
 
