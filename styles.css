@@ -1,0 +1,102 @@
+:root{
+  --bg:#0b0b0b;
+  --ui:rgba(0,0,0,0.55);
+  --ui2:rgba(0,0,0,0.30);
+  --text:#fff;
+}
+html,body{height:100%;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
+.app{min-height:100%;display:grid;place-items:center;padding:12px;}
+.stage{
+  position:relative;
+  width:min(92vw,720px);
+  aspect-ratio:2/3;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.55);
+  background:#111;
+}
+.page{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  background:#111;
+  user-select:none;
+  -webkit-user-drag:none;
+}
+.tap-hint{
+  position:absolute;
+  left:50%;
+  bottom:14px;
+  transform:translateX(-50%);
+  background:var(--ui);
+  color:var(--text);
+  border:1px solid rgba(255,255,255,0.18);
+  border-radius:999px;
+  padding:10px 14px;
+  font-size:14px;
+  cursor:pointer;
+}
+.icon-btn{
+  position:absolute;
+  width:44px;height:44px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.18);
+  background:var(--ui);
+  color:var(--text);
+  display:grid;place-items:center;
+  cursor:pointer;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 160ms ease;
+}
+.stage.show-page3 .icon-btn{opacity:1;pointer-events:auto;}
+.zoom-left{left:18px;bottom:18px;}
+.zoom-right{left:74px;bottom:18px;}
+.audio-toggle{right:18px;bottom:18px;}
+.modal{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,0.72);
+  display:none;
+  place-items:center;
+  padding:14px;
+}
+.modal.open{display:grid;}
+.modal-inner{
+  position:relative;
+  width:min(96vw,820px);
+  max-height:90vh;
+  background:rgba(20,20,20,0.92);
+  border:1px solid rgba(255,255,255,0.14);
+  border-radius:14px;
+  padding:14px;
+}
+.close{
+  position:absolute;top:10px;right:10px;
+  width:42px;height:42px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.18);
+  background:var(--ui2);
+  color:var(--text);
+  cursor:pointer;
+}
+.zoom-wrap{
+  overflow:auto;
+  max-height:76vh;
+  border-radius:10px;
+  background:#0f0f0f;
+  -webkit-overflow-scrolling:touch;
+}
+.zoom-img{
+  display:block;
+  width:1200px;
+  max-width:none;
+  height:auto;
+}
+.zoom-tip{margin:10px 6px 2px;font-size:12px;opacity:0.85;}
+@media (max-width:420px){.zoom-img{width:980px;}}

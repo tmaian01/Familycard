@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Christmas Card</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="app" aria-label="Interactive Christmas card">
+    <div class="stage" id="stage">
+      <img id="pageImg" class="page" src="assets/images/page1.png" alt="Christmas card page" />
+      <button id="tapHint" class="tap-hint" aria-label="Next page">Tap / click</button>
+
+      <button id="zoomLeft" class="icon-btn zoom-left" aria-label="Zoom left page" title="Zoom left page">🔍</button>
+      <button id="zoomRight" class="icon-btn zoom-right" aria-label="Zoom right page" title="Zoom right page">🔍</button>
+      <button id="audioToggle" class="icon-btn audio-toggle" aria-label="Toggle music" title="Music">♪</button>
+    </div>
+
+    <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-label="Zoom view">
+      <div class="modal-inner">
+        <button id="closeModal" class="close" aria-label="Close zoom">✕</button>
+        <div class="zoom-wrap">
+          <img id="zoomImg" class="zoom-img" src="" alt="Zoomed page" />
+        </div>
+        <p class="zoom-tip">Pinch/scroll to zoom.</p>
+      </div>
+    </div>
+
+    <audio id="music" loop preload="auto">
+      <source src="assets/audio/music.mp3" type="audio/mpeg" />
+    </audio>
+  </main>
+
+  <script src="js/card.js"></script>
+</body>
+</html>
